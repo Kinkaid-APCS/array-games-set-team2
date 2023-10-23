@@ -26,13 +26,19 @@ public class Referee {
 		// TODO: write the Referee's playGame method.
 
 		System.out.println("Playing game."); // placeholder code
+		addCards12();
 		askUserForSets();
+	}
+	public void addCards12()
+	{
+		//adds the initial 12 cards at the beginning of the game
 	}
 	public void addCards3()
 	{
 //add 3 cards to the board if the user can't find a set
+
 	}
-	public String askUserForSets()
+	public int[] askUserForSets()
 	{
 		Scanner seeASet = new Scanner(System.in);
 		System.out.println("Do you see a set? Type yes or no.");
@@ -43,14 +49,25 @@ public class Referee {
 		} else {
 			Scanner set = new Scanner(System.in);
 			System.out.println("Which 3 cards make a set?");
-			String checkSet = set.nextLine();
-			return checkSet;
+			int x1 = set.nextInt();
+			int x2 = set.nextInt();
+			int x3 = set.nextInt();
+            String dummy = set.nextLine();
+			return new int[]{x1, x2, x3};
 		}
 	}
-	public boolean checkForSet(String checkSet)
+	public boolean checkForSet(int[] askUserForASets)
 	{
-		if (checkSet.equals(null)) {
+		if (askUserForSets()== null) {
+			return false;
+		} else if (!isThereASet) {
+			return false;
+		} else {
 
 		}
+	}
+	public void removeSet()
+	{
+		//removes a set if the user finds that those three cards make a set
 	}
 }
