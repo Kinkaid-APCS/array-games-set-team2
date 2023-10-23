@@ -97,7 +97,5 @@ public class Card {
 		// so the string "/u001B[31mTest/u001B[0m" Prints Test in red letters.
 		// and "/u001B[31m/u001B[42mTest2/u001B[0m" prints Test2 in red letters on a green background.
 		//  (the /u001B[0m at the end resets the color to normal for the next thing you print.)
-
-
 	}
 
