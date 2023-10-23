@@ -50,43 +50,47 @@ public class Card {
 		}
 
 
-
+	}
 
 		// NOTE: there are no modifiers (setters) because we
 		//       don't want to ever change a card after we make it.
 
-		public String toString ()
-		{
-			int number = groupSize;
+		public String toString(){
+			String background = "";
+			String color = "";
+			String shape = "";
 			String fin = "";
 			if (whichIcon == 0){
-				String shape = "x";
+				shape = "x";
 			}
 			else if (whichIcon == 1) {
-				String shape = "•";
+				shape = "•";
 			}
 			else if (whichIcon == 2) {
-				String shape = "o";
+				shape = "o";
+			}
+			for (int i = 0; i > groupSize; i++){
+				fin = fin.concat(shape);
 			}
 			if (whichColor == 0){
-				String color = "\u001B[32m";
+				color = "\u001B[32m";
 			}
 			else if (whichColor == 1) {
-				String color = "\u001B[31m";
+				color = "\u001B[31m";
 			}
 			else if (whichColor == 2) {
-				String color = "\u001B[35m\t";
+				color = "\u001B[35m";
 			}
 			if (whichBackground == 0){
-				String background = "\u001B[43m";
+				background = "\u001B[43m";
 			}
 			else if (whichBackground == 1) {
-				String background = "\u001B[44m\n";
+				background = "\u001B[44m";
 			}
 			else if (whichBackground == 2) {
-				String background = "\u001B[46m";
+				background = "\u001B[46m";
 			}
-			return face + " of " + suit;
+			return color + fin + background;
 		}
 		// TODO: you write the Card's toString
 		// hint: see https://www.geeksforgeeks.org/how-to-print-colored-text-in-java-console/
@@ -97,4 +101,3 @@ public class Card {
 
 	}
 
-}
