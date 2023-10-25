@@ -13,7 +13,9 @@ public class Referee {
 	// TODO: decide which private member variables the Referee class needs and declare them here.
 
 	int currentScore = 0;
-	int amountOfCards = 0;
+	int amountOfCards = 81;
+	Card [] selection;
+	Deck myDeck;
 	/**
 	 * constructor
 	 */
@@ -27,16 +29,12 @@ public class Referee {
 		// TODO: write the Referee's playGame method.
 
 		System.out.println("Playing game."); // placeholder code
-		addCards12();
 		for (amountOfCards >= 3) {
 		askUserForSets();
 		}
 		System.out.println("Your final score was " + currentScore);
 	}
-	public void addCards12()
-	{
-		//adds the initial 12 cards at the beginning of the game
-	}
+
 	public void addCards3()
 	{
 //add 3 cards to the board if the user can't find a set
