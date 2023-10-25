@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class SetRunner {
 
@@ -11,6 +12,8 @@ public class SetRunner {
 			// enter test code here.
 			Card c0 = new Card(0, 1, 0, 0);
 			System.out.println(c0);
+			Referee ref = new Referee();
+			System.out.println(Arrays.toString(ref.askUserForSets()));
 			System.out.println("End tests");
 		}
 		else

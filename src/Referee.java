@@ -16,11 +16,16 @@ public class Referee {
 	int amountOfCards = 81;
 	Card [] selection;
 	Deck myDeck;
+
+	private Scanner keyReader;
 	/**
 	 * constructor
 	 */
 	// TODO: write the Referee's constructor method.
-	
+	public Referee()
+	{
+		keyReader = new Scanner(System.in);
+	}
 	/**
 	 * playGame - the main game loop for the program.
 	 */
@@ -28,7 +33,7 @@ public class Referee {
 		// TODO: write the Referee's playGame method.
 
 		System.out.println("Playing game."); // placeholder code
-		for (amountOfCards >= 3) {
+		while (amountOfCards >= 3) {
 		askUserForSets();
 		}
 		System.out.println("Your final score was " + currentScore);
@@ -41,19 +46,18 @@ public class Referee {
 	}
 	public int[] askUserForSets()
 	{
-		Scanner seeASet = new Scanner(System.in);
+
 		System.out.println("Do you see a set? Type yes or no.");
-		String yesOrNo = seeASet.nextLine();
+		String yesOrNo = keyReader.nextLine();
 		if (yesOrNo.equals("no")){
 			addCards3();
 			return null;
 		} else {
-			Scanner set = new Scanner(System.in);
 			System.out.println("Which 3 cards make a set?");
-			int x1 = set.nextInt();
-			int x2 = set.nextInt();
-			int x3 = set.nextInt();
-            String dummy = set.nextLine();
+			int x1 = keyReader.nextInt();
+			int x2 = keyReader.nextInt();
+			int x3 = keyReader.nextInt();
+            String dummy = keyReader.nextLine();
 			return new int[]{x1, x2, x3};
 		}
 	}
@@ -62,6 +66,7 @@ public class Referee {
 		if (askUserForSets()== null) {
 			return false;
 		} else {
+
 		//use the multiple of threes trick
 
 
@@ -76,7 +81,7 @@ public class Referee {
 	{
 		if (checkForSet) {
 			//remove the three cards that are found to be apart of the true set
-
+			amountOfCards = amountOfCards -3;
 		}
 	}
 }
