@@ -27,10 +27,10 @@ public class Referee {
 
 		System.out.println("Playing game."); // placeholder code
 		addCards12();
-		//for (amountOfCards >= 3) {
+		for (amountOfCards >= 3) {
 		askUserForSets();
-		//}
-		//System.out.println("Your final score was " + currentScore);
+		}
+		System.out.println("Your final score was " + currentScore);
 	}
 	public void addCards12()
 	{
