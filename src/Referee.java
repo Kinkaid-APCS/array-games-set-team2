@@ -25,6 +25,8 @@ public class Referee {
 	public Referee()
 	{
 		keyReader = new Scanner(System.in);
+		selection = new Card[3];
+		myDeck = new Deck();
 	}
 	/**
 	 * playGame - the main game loop for the program.
@@ -44,7 +46,7 @@ public class Referee {
 //add 3 cards to the board if the user can't find a set
 
 	}
-	public int[] askUserForSets()
+	public Card[] askUserForSets()
 	{
 
 		System.out.println("Do you see a set? Type yes or no.");
@@ -58,11 +60,12 @@ public class Referee {
 			int x2 = keyReader.nextInt();
 			int x3 = keyReader.nextInt();
             String dummy = keyReader.nextLine();
-			return new int[]{x1, x2, x3};
+			return new Card[]{x1, x2, x3};
 		}
 	}
 	public boolean checkForSet(int[] askUserForASets)
 	{
+		selection = askUserForASets;
 		if (askUserForSets()== null) {
 			return false;
 		} else {
