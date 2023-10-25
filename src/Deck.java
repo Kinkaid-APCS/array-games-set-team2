@@ -3,7 +3,7 @@
  */
 public class Deck {
 	private Card[] Deck;
-	private int topOfDeck;
+	private int lastCard;
 	
 	/**
 	 * constructor - makes a deck containing one card for every 
@@ -14,7 +14,8 @@ public class Deck {
 	{
 		//--------------------
 		// TODO: insert your code here.
-		
+		Deck = new Card[81];
+		lastCard = -1;
 		//--------------------
 		
 	}
@@ -31,11 +32,27 @@ public class Deck {
 		Card c = null;
 		//--------------------
 		// TODO: Insert your code here.
-		
+		if (outOfCards())
+		{
+			throw new ArrayIndexOutOfBoundsException("Attempted to add a card to a full deck.");
+		}
+		else {
+			lastCard++;
+			Deck[lastCard] = c;
+		}
 		//--------------------
 		return c;
 	}
-	
+
+	/**
+	 * indicates whether there are 1 or more Cards stored in this CardPile
+	 * @return - whether this CardPile has any cards
+	 */
+	public int numCards()
+	{
+		return lastCard + 1;
+	}
+
 	/**
 	 * shuffle - shuffles the cards in the deck by swapping many times.
 	 * resets "top of deck" to the beginning.
@@ -47,7 +64,19 @@ public class Deck {
 		// TODO: insert your code here.
 		// Hint #1: Remember, (int)(Math.random()*52) will give you an integer from 0..51, inclusive.
 		// Hint #2: 52 is not the number you want for this deck.
-		
+		for (int i = 0; i < numCards() * 3; i++)
+		{
+			int a = (int)(Math.random()*(numCards()));
+			int b = (int)(Math.random()*(numCards()));
+
+			if (a != b)
+			{
+				Card temp = Deck[a];
+				Deck[a] = Deck[b];
+				Deck[b] = temp;
+			}
+
+		}
 		//--------------------
 		
 	}
@@ -61,7 +90,10 @@ public class Deck {
 		boolean pastEndOfDeck = false;
 		//--------------------
 		//TODO: insert your code here
-		
+		if (lastCard > Deck.length - 1)
+		{
+			pastEndOfDeck = true;
+		}
 		//--------------------
 		return pastEndOfDeck;
 	}
