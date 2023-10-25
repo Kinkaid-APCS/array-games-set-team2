@@ -11,8 +11,9 @@ import java.util.Scanner;
  */
 public class Referee {
 	// TODO: decide which private member variables the Referee class needs and declare them here.
-	boolean isThereASet = false;
+
 	int currentScore = 0;
+	int amountOfCards = 0;
 	/**
 	 * constructor
 	 */
@@ -27,7 +28,10 @@ public class Referee {
 
 		System.out.println("Playing game."); // placeholder code
 		addCards12();
+		for (amountOfCards >= 3) {
 		askUserForSets();
+		}
+		System.out.println("Your final score was " + currentScore);
 	}
 	public void addCards12()
 	{
@@ -60,14 +64,22 @@ public class Referee {
 	{
 		if (askUserForSets()== null) {
 			return false;
-		} else if (!isThereASet) {
-			return false;
 		} else {
+		//use the multiple of threes trick
 
+
+
+
+
+			currentScore = currentScore + 3;
+			return true;
 		}
 	}
-	public void removeSet()
+	public void removeSet(boolean checkForSet, int[] askUserForASets)
 	{
-		//removes a set if the user finds that those three cards make a set
+		if (checkForSet) {
+			//remove the three cards that are found to be apart of the true set
+
+		}
 	}
 }

@@ -86,6 +86,28 @@ public class Board {
 		//       factors of 3. You should not need a ton of "if" statements!!!!
 		//       See me if you have questions.
 		// TODO: insert your code here.
+		if (a != b && b != c && a!= c){
+			int aIcon = a.getWhichIcon();
+			int bIcon = b.getWhichIcon();
+			int cIcon = c.getWhichIcon();
+			if(((aIcon + bIcon + cIcon) % 3) != 0) {
+				return false;
+			}
+			int aGroupSize = a.getGroupSize();
+			int bGroupSize = b.getGroupSize();
+			int cGroupSize = c.getGroupSize();
+			if(((aGroupSize + bGroupSize + cGroupSize) % 3) != 0) {
+				return false;
+			}
+			if(((a.getWhichBackground() + b.getWhichBackground() + c.getWhichBackground()) % 3) != 0){
+				return false;
+			}
+			if (((a.getWhichColor() + b.getWhichColor() + c.getWhichColor()) % 3) != 0) {
+				return false;
+			}
+			legal = true;
+
+		}
 		
 		//--------------------
 		return legal;
