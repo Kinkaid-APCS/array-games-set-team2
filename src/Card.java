@@ -69,25 +69,31 @@ public class Card {
 			else if (whichIcon == 2) {
 				shape = "o";
 			}
-			for (int i = 1; i <= groupSize; i++){
+			for (int i = 1; i <= groupSize+1; i++){
 				fin = fin.concat(shape);
 			}
 			if (whichColor == 0){
-				color = "\u001B[32m";
-			}
-			else if (whichColor == 1) {
+				//red
 				color = "\u001B[31m";
 			}
+			else if (whichColor == 1) {
+				//blue
+				color = "\u001B[34m";
+			}
 			else if (whichColor == 2) {
-				color = "\u001B[35m";
+				//white
+				color = "\u001B[37m";
 			}
 			if (whichBackground == 0){
+				//yellow
 				background = "\u001B[43m";
 			}
 			else if (whichBackground == 1) {
-				background = "\u001B[44m";
+				//purple
+				background = "\u001B[45m";
 			}
 			else if (whichBackground == 2) {
+				//cyan
 				background = "\u001B[46m";
 			}
 			return color + background + fin + "\u001B[0m";

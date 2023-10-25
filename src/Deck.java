@@ -10,14 +10,29 @@ public class Deck {
 	 * combination of features and sets the topOfDeck to the index
 	 * of the last card.
 	 */
-	public Deck()
-	{
+	public Deck() {
 		//--------------------
 		// TODO: insert your code here.
 		Deck = new Card[81];
 		lastCard = -1;
+		int[] icons = {0, 1, 2};
+		int[] colors = {0, 1, 2};
+		int[] number = {0, 1, 2,};
+		int[] background = {0, 1, 2};
+		int i = 0;
+		for (int p = 0; p < icons.length; p++) {
+			for (int q = 0; q < colors.length; q++) {
+				for (int r = 0; r < number.length; r++) {
+					for (int s = 0; s < background.length; s++) {
+						Deck[i] = new Card(icons[p], colors[q], number[r], background[s]);
+						i++;
+					}
+				}
+			}
+		}
+
+		lastCard = Deck.length - 1;
 		//--------------------
-		
 	}
 	
 	/**
@@ -111,7 +126,9 @@ public class Deck {
 		// TODO: insert your code here. (optional, but suggested)
 		// this is not something you'll use in the game, but might be handy
 		//    for debugging.
-		
+		for (int i = 0; !outOfCards(); i++){
+			System.out.println(Deck[i]);
+		}
 		//--------------------
 		return result;
 	}
