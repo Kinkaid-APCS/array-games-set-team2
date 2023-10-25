@@ -69,7 +69,7 @@ public class Card {
 			else if (whichIcon == 2) {
 				shape = "o";
 			}
-			for (int i = 0; i > groupSize; i++){
+			for (int i = 1; i <= groupSize; i++){
 				fin = fin.concat(shape);
 			}
 			if (whichColor == 0){
@@ -90,7 +90,7 @@ public class Card {
 			else if (whichBackground == 2) {
 				background = "\u001B[46m";
 			}
-			return color + fin + background;
+			return color + background + fin + "\u001B[0m";
 		}
 		// TODO: you write the Card's toString
 		// hint: see https://www.geeksforgeeks.org/how-to-print-colored-text-in-java-console/
