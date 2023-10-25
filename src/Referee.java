@@ -22,8 +22,7 @@ public class Referee {
 	/**
 	 * playGame - the main game loop for the program.
 	 */
-	public void playGame()
-	{
+	public void playGame() {
 		// TODO: write the Referee's playGame method.
 
 		System.out.println("Playing game."); // placeholder code
