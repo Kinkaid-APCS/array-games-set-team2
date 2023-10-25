@@ -31,6 +31,7 @@ public class Deck {
 			}
 		}
 
+
 		lastCard = Deck.length - 1;
 		//--------------------
 	}
