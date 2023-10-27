@@ -14,7 +14,7 @@ public class Referee {
 
 	int currentScore = 0;
 	int amountOfCards = 81;
-	Card [] selection;
+	int [] selection;
 	Deck myDeck;
 
 	private Scanner keyReader;
@@ -25,7 +25,7 @@ public class Referee {
 	public Referee()
 	{
 		keyReader = new Scanner(System.in);
-		selection = new Card[3];
+		selection = new int[3];
 		myDeck = new Deck();
 	}
 	/**
@@ -46,44 +46,50 @@ public class Referee {
 //add 3 cards to the board if the user can't find a set
 
 	}
-	public Card[] askUserForSets()
+	public void askUserForSets()
 	{
 
 		System.out.println("Do you see a set? Type yes or no.");
 		String yesOrNo = keyReader.nextLine();
 		if (yesOrNo.equals("no")){
 			addCards3();
-			return null;
 		} else {
 			System.out.println("Which 3 cards make a set?");
 			int x1 = keyReader.nextInt();
 			int x2 = keyReader.nextInt();
 			int x3 = keyReader.nextInt();
             String dummy = keyReader.nextLine();
-			return new Card[]{x1, x2, x3};
+			selection = new int[]{x1, x2, x3};
 		}
 	}
-	public boolean checkForSet(int[] askUserForASets)
-	{
-		selection = askUserForASets;
-		if (askUserForSets()== null) {
-			return false;
-		} else {
-
-		//use the multiple of threes trick
-
-
-
-
-
-			currentScore = currentScore + 3;
-			return true;
-		}
-	}
-	public void removeSet(boolean checkForSet, int[] askUserForASets)
+	public boolean checkForSet(int [] selection) {
+        int a = selection[0];
+        int b = selection[1];
+        int c = selection[2];
+        boolean legal = false;
+        if (a != b && b != c && a != c) {
+            if (((a.getWhichIcon() + b.getWhichIcon() + c.getWhichIcon()) % 3) != 0) {
+                return false;
+            }
+            if (((a.getGroupSize() + b.GetGroupSize() + c.getGroupSize()) % 3) != 0) {
+                return false;
+            }
+            if (((a.getWhichBackground() + b.getWhichBackground() + c.getWhichBackground()) % 3) != 0) {
+                return false;
+            }
+            if (((a.getWhichColor() + b.getWhichColor() + c.getWhichColor()) % 3) != 0) {
+                return false;
+            }
+            currentScore = currentScore + 3;
+            legal = true;
+        }
+        return legal;
+    }
+	public void removeSet(boolean checkForSet, int[] selection)
 	{
 		if (checkForSet) {
 			//remove the three cards that are found to be apart of the true set
+
 			amountOfCards = amountOfCards -3;
 		}
 	}
