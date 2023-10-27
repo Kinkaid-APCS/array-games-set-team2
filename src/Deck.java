@@ -30,6 +30,7 @@ public class Deck {
 				}
 			}
 		}
+		shuffle();
 
 
 		lastCard = Deck.length - 1;
@@ -106,7 +107,7 @@ public class Deck {
 		boolean pastEndOfDeck = false;
 		//--------------------
 		//TODO: insert your code here
-		if (lastCard > Deck.length - 1)
+		if (lastCard > Deck.length)
 		{
 			pastEndOfDeck = true;
 		}
@@ -127,9 +128,6 @@ public class Deck {
 		// TODO: insert your code here. (optional, but suggested)
 		// this is not something you'll use in the game, but might be handy
 		//    for debugging.
-		for (int i = 0; !outOfCards(); i++){
-			System.out.println(Deck[i]);
-		}
 		//--------------------
 		return result;
 	}

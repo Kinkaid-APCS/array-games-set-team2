@@ -8,20 +8,32 @@
  */
 public class Board {
 	
-	Card[] displayedCards;
+	private Deck allCards;
+	private Card[] displayedCards;
 	/**
 	 * constructor - set up the board's variables, including dealing 12 cards.
 	 */
 	public Board()
 	{
-		displayedCards = new Card[15];
+		int i = 0;
+		while (i < 15) {
+			if (i<=12) {
+				displayedCards[i] = allCards[i].dealCard();
+			}
+			else{
+				displayedCards[i] = null;
+			}
+			i++;
+		}
+
+	}
+
 		//--------------------
 		// fill the first 12 slots with cards from the deck.
 		// leave the last 3 as null for now.
 		// TODO: Insert your code here.
-		
 		//--------------------
-	}
+
 	
 	/**
 	 * getCardAtLoc - accesses the card at a given location
@@ -35,7 +47,7 @@ public class Board {
 		Card c = null;
 		//--------------------
 		// TODO: Insert your code here
-		
+		c = displayedCards[loc];
 		//--------------------
 		return c;
 	}
@@ -43,9 +55,6 @@ public class Board {
 	/**
 	 * isLegal - determines whether the three cards at the given locations
 	 * are a "SET."
-	 * @param cardLocation0
-	 * @param cardLocation1
-	 * @param cardLocation2  // alternately, use a small array.
 	 * @return whether (true/false) these cards are a "SET."
 	 * A SET is formed when for each of the four categories, all the cards 
 	 * are the same, or all are different. For example, here is a "SET":
@@ -123,7 +132,11 @@ public class Board {
 	{
 		//--------------------
 		// TODO: insert your code here.
-		
+		int i = 3;
+		while(i<= 3) {
+            displayedCards[i] = allCards[i].dealCard();
+        }
+
 		//--------------------
 	}
 	
@@ -157,7 +170,7 @@ public class Board {
 		int numCards = 0;
 		//--------------------
 		// TODO: insert your code here
-		
+		numCards = displayedCards.length;
 		//--------------------
 		return numCards;
 	}
