@@ -194,3 +194,4 @@ public class Board {
 		return result;
 	}
 }
+
