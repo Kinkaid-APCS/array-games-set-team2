@@ -27,11 +27,11 @@ public class Deck {
 					for (int s = 0; s < background.length; s++) {
 						Deck[i] = new Card(icons[p], colors[q], number[r], background[s]);
 						i++;
+						shuffle();
 					}
 				}
 			}
 		}
-		shuffle();
 		lastCard = 0;
 
 		//--------------------

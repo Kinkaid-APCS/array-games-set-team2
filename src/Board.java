@@ -186,7 +186,7 @@ public class Board {
 		// TODO: insert your code here.
 		String z = "";
 		for (int i = 0; i < displayedCards.length; i++){
-			result = result + displayedCards[i];
+			result =  i + ":" + result + displayedCards[i] + "\n";
 	}
 		//--------------------
 		return result;
