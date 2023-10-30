@@ -15,10 +15,11 @@ public class Board {
 	 */
 	public Board()
 	{
+		allCards = new Deck();
 		int i = 0;
 		while (i < 15) {
 			if (i<=12) {
-				displayedCards[i] = allCards[i].dealCard();
+				displayedCards[i] = allCards.dealCard();
 			}
 			else{
 				displayedCards[i] = null;
@@ -134,7 +135,7 @@ public class Board {
 		// TODO: insert your code here.
 		int i = 3;
 		while(i<= 3) {
-            displayedCards[i] = allCards[i].dealCard();
+            displayedCards[i] = allCards.dealCard();
         }
 
 		//--------------------
@@ -185,7 +186,10 @@ public class Board {
 		String result = "";
 		//--------------------
 		// TODO: insert your code here.
-		
+		String z = "";
+		for (int i = 0; i < displayedCards.length; i++){
+			result = result + displayedCards[i];
+	}
 		//--------------------
 		return result;
 	}

@@ -68,18 +68,18 @@ public class Referee {
         int c = selection[2];
         boolean legal = false;
         if (a != b && b != c && a != c) {
-            if (((a.getWhichIcon() + b.getWhichIcon() + c.getWhichIcon()) % 3) != 0) {
-                return false;
-            }
-            if (((a.getGroupSize() + b.GetGroupSize() + c.getGroupSize()) % 3) != 0) {
-                return false;
-            }
-            if (((a.getWhichBackground() + b.getWhichBackground() + c.getWhichBackground()) % 3) != 0) {
-                return false;
-            }
-            if (((a.getWhichColor() + b.getWhichColor() + c.getWhichColor()) % 3) != 0) {
-                return false;
-            }
+            //if (((a.getWhichIcon() + b.getWhichIcon() + c.getWhichIcon()) % 3) != 0) {
+              //  return false;
+            //}
+            //if (((a.getGroupSize() + b.GetGroupSize() + c.getGroupSize()) % 3) != 0) {
+              //  return false;
+            //}
+            //if (((a.getWhichBackground() + b.getWhichBackground() + c.getWhichBackground()) % 3) != 0) {
+              //  return false;
+            //}
+            //if (((a.getWhichColor() + b.getWhichColor() + c.getWhichColor()) % 3) != 0) {
+              //  return false;
+            //}
             currentScore = currentScore + 3;
             legal = true;
         }
