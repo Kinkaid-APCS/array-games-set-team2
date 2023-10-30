@@ -38,6 +38,7 @@ public class Referee {
 
 		System.out.println("Playing game."); // placeholder code
 		while (!myDeck.gameOver) {
+		System.out.println(myBoard);
 		askUserForSets();
 		checkForSet(selection);
 		removeSet(checkForSet(selection), selection);
@@ -96,7 +97,7 @@ public class Referee {
 	{
 		if (checkForSet) {
 			//remove the three cards that are found to be apart of the true set
-
+			System.out.println("set");
 			amountOfCards = amountOfCards -3;
 		}
 	}
