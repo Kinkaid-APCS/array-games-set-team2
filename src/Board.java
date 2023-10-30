@@ -15,10 +15,11 @@ public class Board {
 	 */
 	public Board()
 	{
+		allCards = new Deck();
 		int i = 0;
 		while (i < 15) {
 			if (i<=12) {
-				displayedCards[i] = allCards[i].dealCard();
+				displayedCards[i] = allCards.dealCard();
 			}
 			else{
 				displayedCards[i] = null;
@@ -128,17 +129,17 @@ public class Board {
 	 * the deck and put them into the first three locations that contain
 	 * null.
 	 */
-//	public void dealThreeCards()
-//	{
-//		//--------------------
-//		// TODO: insert your code here.
-//		int i = 3;
-//		while(i<= 3) {
-//            displayedCards[i] = allCards[i].dealCard();
-//        }
-//
-//		//--------------------
-//	}
+	public void dealThreeCards()
+	{
+		//--------------------
+		// TODO: insert your code here.
+		int i = 3;
+		while(i<= 3) {
+            displayedCards[i] = allCards.dealCard();
+        }
+
+		//--------------------
+	}
 	
 	/**
 	 * remove3Cards - removes three cards from the board by replacing them with null.
@@ -188,8 +189,9 @@ public class Board {
 		String z = "";
 		for (int i = 0; i < displayedCards.length; i++){
 			result = result + displayedCards[i];
-		}
+	}
 		//--------------------
 		return result;
 	}
 }
+

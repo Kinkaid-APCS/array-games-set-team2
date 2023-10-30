@@ -33,7 +33,7 @@ public class Deck {
 		shuffle();
 
 
-		lastCard = Deck.length - 1;
+		lastCard = Deck.length + 1;
 		//--------------------
 	}
 	
@@ -107,7 +107,7 @@ public class Deck {
 		boolean pastEndOfDeck = false;
 		//--------------------
 		//TODO: insert your code here
-		if (lastCard > Deck.length)
+		if (lastCard >= Deck.length)
 		{
 			pastEndOfDeck = true;
 		}
