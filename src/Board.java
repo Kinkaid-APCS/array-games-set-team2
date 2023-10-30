@@ -13,20 +13,20 @@ public class Board {
 	/**
 	 * constructor - set up the board's variables, including dealing 12 cards.
 	 */
-//	public Board()
-//	{
-//		int i = 0;
-//		while (i < 15) {
-//			if (i<=12) {
-//				displayedCards[i] = allCards[i].dealCard();
-//			}
-//			else{
-//				displayedCards[i] = null;
-//			}
-//			i++;
-//		}
-//
-//	}
+	public Board()
+	{
+		int i = 0;
+		while (i < 15) {
+			if (i<=12) {
+				displayedCards[i] = allCards[i].dealCard();
+			}
+			else{
+				displayedCards[i] = null;
+			}
+			i++;
+		}
+
+	}
 
 		//--------------------
 		// fill the first 12 slots with cards from the deck.
@@ -185,7 +185,10 @@ public class Board {
 		String result = "";
 		//--------------------
 		// TODO: insert your code here.
-		
+		String z = "";
+		for (int i = 0; i < displayedCards.length; i++){
+			result = result + displayedCards[i];
+		}
 		//--------------------
 		return result;
 	}
