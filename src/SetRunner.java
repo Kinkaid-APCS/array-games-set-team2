@@ -11,11 +11,12 @@ public class SetRunner {
 			System.out.println("Start tests");
 			// enter test code here.
 			Card c0 = new Card(0, 1, 0, 0);
+			Card c1 = new Card(1, 1, 1, 1);
+			Card c2 = new Card(2, 1, 2, 2);
 			System.out.println(c0);
-			//Referee ref = new Referee();
-			//System.out.println(Arrays.toString(ref.selection));
-			Board boo = new Board();
-			System.out.println(boo);
+			Referee ref = new Referee();
+			ref.playGame();
+			System.out.println(Arrays.toString(ref.selection));
 			System.out.println("End tests");
 		}
 		else
