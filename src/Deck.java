@@ -50,7 +50,7 @@ public class Deck {
 		//--------------------
 		// TODO: Insert your code here.
 		if (!outOfCards()){
-			lastCard = lastCard++;
+			lastCard = lastCard + 1;
 			c = Deck[lastCard];
 		}
 		else{

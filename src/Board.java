@@ -15,14 +15,12 @@ public class Board {
 	 */
 	public Board()
 	{
+		displayedCards = new Card[15];
 		allCards = new Deck();
 		int i = 0;
 		while (i < 15) {
 			if (i<=12) {
 				displayedCards[i] = allCards.dealCard();
-			}
-			else{
-				displayedCards[i] = null;
 			}
 			i++;
 		}
@@ -48,7 +46,7 @@ public class Board {
 		Card c = null;
 		//--------------------
 		// TODO: Insert your code here
-		c = this.displayedCards[loc];
+		c = displayedCards[loc];
 		//--------------------
 		return c;
 	}
