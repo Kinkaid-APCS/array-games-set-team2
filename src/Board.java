@@ -48,7 +48,7 @@ public class Board {
 		Card c = null;
 		//--------------------
 		// TODO: Insert your code here
-		c = displayedCards[loc];
+		c = this.displayedCards[loc];
 		//--------------------
 		return c;
 	}
