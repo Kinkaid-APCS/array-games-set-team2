@@ -4,6 +4,7 @@
 public class Deck {
 	private Card[] Deck;
 	private int lastCard;
+	private boolean gameOver = false;
 	
 	/**
 	 * constructor - makes a deck containing one card for every 
@@ -31,9 +32,8 @@ public class Deck {
 			}
 		}
 		shuffle();
+		lastCard = 0;
 
-
-		lastCard = Deck.length + 1;
 		//--------------------
 	}
 	
@@ -49,13 +49,12 @@ public class Deck {
 		Card c = null;
 		//--------------------
 		// TODO: Insert your code here.
-		if (outOfCards())
-		{
-			throw new ArrayIndexOutOfBoundsException("Attempted to add a card to a full deck.");
+		if (!outOfCards()){
+			lastCard = lastCard++;
+			c = Deck[lastCard];
 		}
-		else {
-			lastCard++;
-			Deck[lastCard] = c;
+		else{
+			gameOver = true;
 		}
 		//--------------------
 		return c;
