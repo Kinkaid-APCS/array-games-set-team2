@@ -13,6 +13,7 @@ public class SetRunner {
 			Card c0 = new Card(0, 1, 0, 0);
 			System.out.println(c0);
 			Referee ref = new Referee();
+			ref.playGame();
 			System.out.println(Arrays.toString(ref.selection));
 			System.out.println("End tests");
 		}

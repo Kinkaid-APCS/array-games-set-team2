@@ -16,6 +16,7 @@ public class Referee {
 	int amountOfCards = 81;
 	int [] selection;
 	Deck myDeck;
+	Board myBoard;
 
 	private Scanner keyReader;
 	/**
@@ -37,6 +38,8 @@ public class Referee {
 		System.out.println("Playing game."); // placeholder code
 		while (amountOfCards >= 3) {
 		askUserForSets();
+		checkForSet(selection);
+		removeSet(checkForSet(selection), selection);
 		}
 		System.out.println("Your final score was " + currentScore);
 	}
@@ -63,15 +66,18 @@ public class Referee {
 		}
 	}
 	public boolean checkForSet(int [] selection) {
-        int a = selection[0];
-        int b = selection[1];
-        int c = selection[2];
+        int aa = selection[0];
+        int bb = selection[1];
+        int cc = selection[2];
+		Card a = myBoard.getCardAtLoc(aa);
+		Card b = myBoard.getCardAtLoc(bb);
+		Card c = myBoard.getCardAtLoc(cc);
         boolean legal = false;
         if (a != b && b != c && a != c) {
             if (((a.getWhichIcon() + b.getWhichIcon() + c.getWhichIcon()) % 3) != 0) {
                 return false;
             }
-            if (((a.getGroupSize() + b.GetGroupSize() + c.getGroupSize()) % 3) != 0) {
+            if (((a.getGroupSize() + b.getGroupSize() + c.getGroupSize()) % 3) != 0) {
                 return false;
             }
             if (((a.getWhichBackground() + b.getWhichBackground() + c.getWhichBackground()) % 3) != 0) {
