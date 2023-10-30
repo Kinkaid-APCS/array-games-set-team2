@@ -13,20 +13,20 @@ public class Board {
 	/**
 	 * constructor - set up the board's variables, including dealing 12 cards.
 	 */
-	public Board()
-	{
-		int i = 0;
-		while (i < 15) {
-			if (i<=12) {
-				displayedCards[i] = allCards[i].dealCard();
-			}
-			else{
-				displayedCards[i] = null;
-			}
-			i++;
-		}
-
-	}
+//	public Board()
+//	{
+//		int i = 0;
+//		while (i < 15) {
+//			if (i<=12) {
+//				displayedCards[i] = allCards[i].dealCard();
+//			}
+//			else{
+//				displayedCards[i] = null;
+//			}
+//			i++;
+//		}
+//
+//	}
 
 		//--------------------
 		// fill the first 12 slots with cards from the deck.
@@ -47,7 +47,7 @@ public class Board {
 		Card c = null;
 		//--------------------
 		// TODO: Insert your code here
-		c = displayedCards[loc];
+		c = this.displayedCards[loc];
 		//--------------------
 		return c;
 	}
@@ -128,17 +128,17 @@ public class Board {
 	 * the deck and put them into the first three locations that contain
 	 * null.
 	 */
-	public void dealThreeCards()
-	{
-		//--------------------
-		// TODO: insert your code here.
-		int i = 3;
-		while(i<= 3) {
-            displayedCards[i] = allCards[i].dealCard();
-        }
-
-		//--------------------
-	}
+//	public void dealThreeCards()
+//	{
+//		//--------------------
+//		// TODO: insert your code here.
+//		int i = 3;
+//		while(i<= 3) {
+//            displayedCards[i] = allCards[i].dealCard();
+//        }
+//
+//		//--------------------
+//	}
 	
 	/**
 	 * remove3Cards - removes three cards from the board by replacing them with null.
