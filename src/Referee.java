@@ -37,7 +37,7 @@ public class Referee {
 		// TODO: write the Referee's playGame method.
 
 		System.out.println("Playing game."); // placeholder code
-		while (myDeck.gameOver) {
+		while (!myDeck.gameOver) {
 		askUserForSets();
 		checkForSet(selection);
 		removeSet(checkForSet(selection), selection);

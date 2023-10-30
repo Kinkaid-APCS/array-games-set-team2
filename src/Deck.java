@@ -4,7 +4,7 @@
 public class Deck {
 	private Card[] Deck;
 	private int lastCard;
-	private boolean gameOver = false;
+	boolean gameOver = false;
 	
 	/**
 	 * constructor - makes a deck containing one card for every 
