@@ -10,6 +10,7 @@ import java.util.Scanner;
  * chance to add three more cards.
  */
 public class Referee {
+
 	// TODO: decide which private member variables the Referee class needs and declare them here.
 	int currentScore = 0;
 	int amountOfCards = 81;
