@@ -28,6 +28,7 @@ public class Referee {
 		keyReader = new Scanner(System.in);
 		selection = new int[3];
 		myDeck = new Deck();
+		myBoard = new Board();
 	}
 	/**
 	 * playGame - the main game loop for the program.

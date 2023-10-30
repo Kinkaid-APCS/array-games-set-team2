@@ -11,6 +11,8 @@ public class SetRunner {
 			System.out.println("Start tests");
 			// enter test code here.
 			Card c0 = new Card(0, 1, 0, 0);
+			Card c1 = new Card(1, 1, 1, 1);
+			Card c2 = new Card(2, 1, 2, 2);
 			System.out.println(c0);
 			Referee ref = new Referee();
 			ref.playGame();
