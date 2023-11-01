@@ -39,6 +39,7 @@ public class Referee {
 		System.out.println(myBoard);
 		askUserForSets();
 		checkForSet(selection);
+		System.out.println(currentScore);
 		}
 		System.out.println("Your final score was " + currentScore);
 	}
@@ -79,7 +80,7 @@ public class Referee {
 			backgroundsWork = (((a.getWhichBackground() + b.getWhichBackground() + c.getWhichBackground()) % 3) != 0);
 			colorsWork = (((a.getWhichColor() + b.getWhichColor() + c.getWhichColor()) % 3) != 0);
 
-			if(iconsWork && groupsWork && backgroundsWork && colorsWork){
+			if(!(iconsWork && groupsWork && backgroundsWork && colorsWork)){
 				currentScore = currentScore + 3;
 				legal = true;
 			}
