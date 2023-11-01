@@ -97,7 +97,7 @@ public class Referee {
 	{
 		if (checkForSet) {
 			//remove the three cards that are found to be apart of the true set
-			System.out.println("set");
+
 			amountOfCards = amountOfCards -3;
 		}
 	}
