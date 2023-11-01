@@ -81,8 +81,8 @@ public class Card {
 				color = "\u001B[34m";
 			}
 			else if (whichColor == 2) {
-				//white
-				color = "\u001B[37m";
+				//black
+				color = "\u001B[30m";
 			}
 			if (whichBackground == 0){
 				//yellow

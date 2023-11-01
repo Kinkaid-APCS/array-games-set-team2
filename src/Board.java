@@ -138,6 +138,18 @@ public class Board {
 
 		//--------------------
 	}
+
+	public void dealThreeCardsToLocation(int loc1, int loc2, int loc3)
+	{
+		//--------------------
+		// TODO: insert your code here.
+		displayedCards[loc1] = allCards.dealCard();
+		displayedCards[loc2] = allCards.dealCard();
+		displayedCards[loc3] = allCards.dealCard();
+
+
+		//--------------------
+	}
 	
 	/**
 	 * remove3Cards - removes three cards from the board by replacing them with null.
@@ -163,6 +175,7 @@ public class Board {
 		displayedCards[cardLocation0]=null;
 		displayedCards[cardLocation1]=null;
 		displayedCards[cardLocation2]=null;
+		dealThreeCardsToLocation(cardLocation0, cardLocation1, cardLocation2);
 	}
 	/**
 	 * getNumCardsOnBoard
