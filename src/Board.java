@@ -175,7 +175,7 @@ public class Board {
 		displayedCards[cardLocation0]=null;
 		displayedCards[cardLocation1]=null;
 		displayedCards[cardLocation2]=null;
-		dealThreeCardsToLocation(cardLocation0, cardLocation1, cardLocation2);
+		//dealThreeCardsToLocation(cardLocation0, cardLocation1, cardLocation2);
 	}
 	/**
 	 * getNumCardsOnBoard
