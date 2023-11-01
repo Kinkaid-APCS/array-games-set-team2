@@ -185,15 +185,15 @@ public class Board {
 	 */
 	public String toString()
 	{
-		String result = "";
+		StringBuilder result = new StringBuilder();
 		//--------------------
 		// TODO: insert your code here.
 		String z = "";
 		for (int i = 0; i < displayedCards.length; i++){
-			result =  i + ":" + result + displayedCards[i] + "\n";
+			result = new StringBuilder(result.append( + i + ":" + displayedCards[i] + "\n"  ));
 	}
 		//--------------------
-		return result;
+		return result.toString();
 	}
 }
 
