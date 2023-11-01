@@ -27,11 +27,11 @@ public class Deck {
 					for (int s = 0; s < background.length; s++) {
 						Deck[i] = new Card(icons[p], colors[q], number[r], background[s]);
 						i++;
-						shuffle();
 					}
 				}
 			}
 		}
+		this.shuffle();
 		lastCard = 0;
 
 		//--------------------
@@ -80,10 +80,10 @@ public class Deck {
 		// TODO: insert your code here.
 		// Hint #1: Remember, (int)(Math.random()*52) will give you an integer from 0..51, inclusive.
 		// Hint #2: 52 is not the number you want for this deck.
-		for (int i = 0; i < numCards() * 3; i++)
+		for (int i = 0; i < Deck.length * 3; i++)
 		{
-			int a = (int)(Math.random()*(numCards()));
-			int b = (int)(Math.random()*(numCards()));
+			int a = (int)(Math.random()*(Deck.length));
+			int b = (int)(Math.random()*(Deck.length));
 
 			if (a != b)
 			{
