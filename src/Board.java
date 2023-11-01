@@ -19,7 +19,7 @@ public class Board {
 		allCards = new Deck();
 		int i = 0;
 		while (i < 15) {
-			if (i<=12) {
+			if (i<12) {
 				displayedCards[i] = allCards.dealCard();
 			}
 			i++;
@@ -159,7 +159,11 @@ public class Board {
 	 //    working - Look at the test for "testGetNumCardsOnBoardAndDeal3" as an
 	 //    example of what to write here.
 	 // 3: write the method and make sure that it passes the test.
-	
+	public void remove3Cards(int cardLocation0,int cardLocation1, int cardLocation2){
+		displayedCards[cardLocation0]=null;
+		displayedCards[cardLocation1]=null;
+		displayedCards[cardLocation2]=null;
+	}
 	/**
 	 * getNumCardsOnBoard
 	 * @return the number of non-null cards on the board
