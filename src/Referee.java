@@ -13,7 +13,6 @@ public class Referee {
 
 	// TODO: decide which private member variables the Referee class needs and declare them here.
 	int currentScore = 0;
-	int amountOfCards = 81;
 	int [] selection;
 	Deck myDeck;
 	Board myBoard;
@@ -40,7 +39,6 @@ public class Referee {
 		System.out.println(myBoard);
 		askUserForSets();
 		checkForSet(selection);
-		removeSet(checkForSet(selection), selection);
 		}
 		System.out.println("Your final score was " + currentScore);
 	}
@@ -66,7 +64,7 @@ public class Referee {
 			selection = new int[]{x1, x2, x3};
 		}
 	}
-	public boolean checkForSet(int [] selection) {
+	public void checkForSet(int [] selection) {
         int aa = selection[0];
         int bb = selection[1];
         int cc = selection[2];
@@ -75,29 +73,19 @@ public class Referee {
 		Card c = myBoard.getCardAtLoc(cc);
         boolean legal = false;
         if (a != b && b != c && a != c) {
-            if (((a.getWhichIcon() + b.getWhichIcon() + c.getWhichIcon()) % 3) != 0) {
-                return false;
-            }
-            if (((a.getGroupSize() + b.getGroupSize() + c.getGroupSize()) % 3) != 0) {
-                return false;
-            }
-            if (((a.getWhichBackground() + b.getWhichBackground() + c.getWhichBackground()) % 3) != 0) {
-                return false;
-            }
-            if (((a.getWhichColor() + b.getWhichColor() + c.getWhichColor()) % 3) != 0) {
-                return false;
-            }
-            currentScore = currentScore + 3;
-            legal = true;
-        }
-        return legal;
-    }
-	public void removeSet(boolean checkForSet, int[] selection)
-	{
-		if (checkForSet) {
-			//remove the three cards that are found to be apart of the true set
+			boolean iconsWork, groupsWork, backgroundsWork, colorsWork;
+			iconsWork = (((a.getWhichIcon() + b.getWhichIcon() + c.getWhichIcon()) % 3) != 0);
+			groupsWork = (((a.getGroupSize() + b.getGroupSize() + c.getGroupSize()) % 3) != 0);
+			backgroundsWork = (((a.getWhichBackground() + b.getWhichBackground() + c.getWhichBackground()) % 3) != 0);
+			colorsWork = (((a.getWhichColor() + b.getWhichColor() + c.getWhichColor()) % 3) != 0);
 
-			amountOfCards = amountOfCards -3;
+			if(iconsWork && groupsWork && backgroundsWork && colorsWork){
+				currentScore = currentScore + 3;
+				legal = true;
+			}
+        }
+		if (legal) {
+			myBoard.remove3Cards(aa, bb, cc);
 		}
-	}
+    }
 }
