@@ -46,7 +46,7 @@ public class Referee {
 	public void addCards3()
 	{
 //add 3 cards to the board if the user can't find a set
-
+		myBoard.dealThreeCardsToLocation(12, 13, 14);
 	}
 	public void askUserForSets()
 	{
